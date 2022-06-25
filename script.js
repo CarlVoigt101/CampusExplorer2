@@ -1433,8 +1433,8 @@ AFRAME.registerComponent('thumbstick-logging',{
     this.el.addEventListener('thumbstickmoved', this.logThumbstick);
   },
   logThumbstick: function (evt) {
-    if (evt.detail.y > 0.95) { console.log("DOWN"); }
-    if (evt.detail.y < -0.95) { console.log("UP"); }
+    if (evt.detail.y > 0.95) {  camera.setAttribute('animation__animateToPos', 'to', { x: 0, y: +1, z: 0 });}
+    if (evt.detail.y < -0.95) { camera.setAttribute('animation__animateToPos', 'to', { x: 0, y: -1, z: 0 });}
     if (evt.detail.x < -0.95) { console.log("LEFT"); }
     if (evt.detail.x > 0.95) { console.log("RIGHT"); }
   }
