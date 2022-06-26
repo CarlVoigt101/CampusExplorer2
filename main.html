@@ -529,7 +529,7 @@
 
   <!--CampusModel-->
     <a-entity id="world" gltf-model="assets/WPF_CAMPUS.glb" change-material-on-click shadow="cast:true; receive:true"></a-entity>
-
+    <a-entity id="world" gltf-model="assets/WPF_CAMPUS_C_BUILDING.glb" change-material-on-click shadow="cast:true; receive:true"></a-entity>
     <!-- C-Alpha -->
     <a-entity alpha id="alpha" gltf-model="assets/alphaGreen.glb"" shadow="cast:false; receive:true" position="-35 50 130"
       scale="20 50 25" visible="false"></a-entity>
@@ -695,10 +695,10 @@
       intensity: 0.6;">
     </a-entity>
 
-    <a-light id="light1" color="#a9e060" position="-36 5 138" angle="0" target="#directionaltarget" intensity="0.0">
+    <a-light id="light1" color="#a9e060" position="-36 5 138" angle="0" target="#directionaltarget" intensity="0.2">
       <a-entity id="directionaltarget" position="-36 0 138"></a-entity>
     </a-light>
-    <a-light id="light2" color="#a9e060" position="-36 5 138" angle="100" intensity="0.0"></a-light>
+    <a-light id="light2" color="#a9e060" position="-36 5 138" angle="100" intensity="0.2"></a-light>
     <!--sky ------------------------------------------------------------------------->
     <a-sky src="#sky" radius="260" side="double" rotation="180 0 0" position="0 0 -10"></a-sky>
 
@@ -718,7 +718,7 @@
     <!--<a-sphere sphere-collider='' id="sphere" position="0 0 0" radius="0.01"></a-sphere>
   </a-entity> -->
 
-    <a-entity rotation-reader id="camera" camera cursor="fuseTimeout:0; rayOrigin: mouse" raycaster="objects: .collidable"
+    <!-- <a-entity rotation-reader id="camera" camera cursor="fuseTimeout:0; rayOrigin: mouse" raycaster="objects: .collidable"
       position="50 10 200" rotation="0 0 0" look-controls="enabled: false" orbit-controls="
         target: #target;
         enabled: true;
@@ -733,15 +733,20 @@
         autoRotateSpeed: 1;
         maxPolarAngle: 1.5665; "
       animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
-    </a-entity>
+    </a-entity> -->
 
-    <a-entity id="camera2" position="50 20 150" camera look-controls wasd-controls="acceleration:30"
+    <!-- <a-entity id="camera2" position="50 20 150" camera look-controls wasd-controls="acceleration:30"
       kinematic-body cursor="fuseTimeout:0; rayOrigin: mouse" raycaster="objects: .collidable"
       animation__animateToPos="startEvents: aniamtetoPos; property: position; from: 0 0 0; to: 0 0 0; dur: 1000;">
       <a-sphere sphere-collider='' id="sphere" position="0 0 0" radius="0.01"></a-sphere>
-    </a-entity>
+    </a-entity> -->
 
-    <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
+  <!-- Camera + controllers rig -->
+  <a-entity id="rig">
+    <a-camera position="0 5 100" raycaster="objects: .collidable" kinematic-body wasd-controls="acceleration:30"></a-camera>
+    <a-entity oculus-touch-controls="hand: left" ></a-entity>
+    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls="acceleration: 30"></a-entity>
+  </a-entity>
 
   </a-scene>
   <!-- /a-scene  ------------------------------------------------------------->
