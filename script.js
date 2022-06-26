@@ -1428,17 +1428,7 @@ function showPage() {
   document.getElementById("loaderContainer").style.display = "none";
 }
 
-AFRAME.registerComponent('thumbstick-logging',{
-  init: function () {
-    this.el.addEventListener('thumbstickmoved', this.logThumbstick);
-  },
-  logThumbstick: function (evt) {
-    if (evt.detail.y > 0.95) {  camera.setAttribute('animation__animateToPos', 'to', { x: 0, y: +1, z: 0 });}
-    if (evt.detail.y < -0.95) { camera.setAttribute('animation__animateToPos', 'to', { x: 0, y: -1, z: 0 });}
-    if (evt.detail.x < -0.95) { console.log("LEFT"); }
-    if (evt.detail.x > 0.95) { console.log("RIGHT"); }
-  }
-});
+
 
 
 // var sectBool1 = true;
