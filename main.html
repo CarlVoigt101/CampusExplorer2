@@ -29,7 +29,7 @@
 
   <!-- fürOculusContoller -->
   <script src="./oculus-thumbstick-controls.js"></script>
-  <script src="https://unpkg.com/aframe-enviroment-component@1.3.1/dist/aframe-enviroment-component.min.js"></script>
+  <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="/assets/LogoCamp.png">
@@ -159,7 +159,7 @@
   <div class="loader"></div>
 </div>
   <!-- a-scene  ------------------------------------------------------------->
-  <a-scene physics="gravity: -55" shadow="type: pcfsoft">
+  <a-scene physics="gravity: -55" shadow="type: pcfsoft" vr-mode-ui="" device-orientation-permission-ui="" fog="">
     <a-assets>
       <a-asset-item id="campus" src="assets/WPF_CAMPUS.glb"></a-asset-item>
       <a-asset-item id="cBuilding" src="assets/WPF_CAMPUS_C_BUILDING.glb"></a-asset-item>
@@ -747,9 +747,9 @@
 
   <!-- Camera + controllers rig -->
   <a-entity id="rig">
-    <a-camera position="0 5 100" raycaster="objects: .collidable" kinematic-body wasd-controls="acceleration:30"></a-camera>
+    <a-camera position="0 5 100"></a-camera>
     <a-entity oculus-touch-controls="hand: left" ></a-entity>
-    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls="acceleration: 30"></a-entity>
+    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
   </a-entity>
 
   </a-scene>
